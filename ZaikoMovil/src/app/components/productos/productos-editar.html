@@ -1,0 +1,42 @@
+
+<ActionBar>
+    <Label text="Editar Producto"></Label>
+</ActionBar>
+
+<ScrollView>
+    <StackLayout backgroundColor="#7aedfd" padding="16">
+        <Label textAlignment="center" text="Editar Producto" class="titul_big" fontSize="24" marginBottom="16"></Label>
+        <GridLayout columns="auto, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" width="100%" horizontalAlignment="center" marginTop="20">
+            <Label text="ID: " row="0" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='id' row="0" col="1" class="fas" color="orangered" editable="false" backgroundColor="#e0e0e0"></TextField>
+
+            <Label text="Nombre: " row="1" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='nombre' maxLength="100" row="1" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'nombre')"></TextField>
+
+            <Label text="cantidad: " row="2" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='cantidad' maxLength="100" row="2" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'cantidad')"></TextField>
+
+            <Label text="precio: " row="3" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='precio' maxLength="100" row="3" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'precio')"></TextField>
+
+            <Label text="categorias: " row="4" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='categorias' maxLength="100" row="4" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'categorias')"></TextField>
+
+            <Label text="unidad_medida: " row="5" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='unidad_medida' row="5" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'unidad_medida')"></TextField>
+
+            <Label text="lote: " row="6" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='lote' row="6" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'lote')"></TextField>
+
+            <Label text="fecha vencimiento: " row="7" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='fecha_vencimiento' row="7" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'fecha_vencimiento')"></TextField>
+
+            <Label text="foto: " row="8" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='foto' row="8" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'foto')"></TextField>
+
+            <Button [text]="boton" class="fas" row="9" col="0" colSpan="2" (tap)="operar()" backgroundColor="#4CAF50" color="white" fontSize="18" marginTop="16"></Button>
+
+            <Button text="&#xf060;  Cancelar" class="fas" row="10" col="0" colSpan="2" [nsRouterLink]="['/productos']" backgroundColor="#f44336" color="white" fontSize="18" marginTop="8"></Button>
+        </GridLayout>
+    </StackLayout>
+</ScrollView>

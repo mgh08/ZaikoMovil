@@ -1,0 +1,47 @@
+<ActionBar style="opacity: 1; background: linear-gradient(rgba(211, 247, 250, 1), rgba(99, 236, 251, 1), rgba(0, 219, 253))  ">
+    <GridLayout columns="*, auto">
+        <button col="1" text="&#xf52b;" class="fas" style="font-size: 24px; color: white; margin-right: 20px;" tap="toggleDrawer"  backgroundColor="transparent" (tap)="onTap()"></button>
+        <StackLayout horizontalAlignment="left" verticalAlignment="middle">
+            <Image src="~/app/images/logo.png" stretch="aspectFit" width="100" margin="10" />
+        </StackLayout>
+    </GridLayout>
+</ActionBar>
+
+<DockLayout style="background: linear-gradient(  rgb(61, 229, 255), #aef4ff, #aef4ff,rgb(61, 229, 255))">
+
+    <GridLayout style="background: linear-gradient(#00dbfd, #8bf7fb, #9ef9ff, #5bf1ff, #00dbfd); border-width: 2px; border-color: white; border-radius: 8px; color: #fafafa; width: 90%; height: 65%;box-shadow: 0px 1px 4px 1px white;">
+
+        <StackLayout row="0" horizontalAlignment="center" style="margin-top: 50px;">
+            <Label text="Registro de Usuario" class="h1 text-center"></Label>
+        </StackLayout>
+
+        <StackLayout row="1" horizontalAlignment="center" verticalAlignment="center">
+            <StackLayout>
+                <TextField hint="Nombre" fontSize="15" ></TextField>
+                <TextField hint="Correo electrónico" fontSize="15" ></TextField>
+                <TextField hint="Contraseña" secure="true" fontSize="15" ></TextField>
+                <TextField hint="Confirmar Contraseña" secure="true" fontSize="15" ></TextField>
+                <Button text="Registrarse" tap="submitRegistration" style="border-radius: 6px; background: linear-gradient(#79edff, #0ecbff); margin-top: 35px;"></Button>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout row="2" verticalAlignment="bottom">
+            <StackLayout orientation="horizontal" horizontalAlignment="center" style="margin-bottom: 50px; margin-top: 35px;">
+                <label text="¿Ya tienes una cuenta? Inicia sesión" [nsRouterLink]="['/login']"></label>
+            </StackLayout>
+        </StackLayout>
+
+    </GridLayout>
+
+
+</DockLayout>
+
+
+
+
+
+
+
+
+
+

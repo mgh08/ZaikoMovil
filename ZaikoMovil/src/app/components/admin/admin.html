@@ -1,0 +1,63 @@
+<ActionBar
+    style="opacity: 1; background: linear-gradient(rgba(122, 237, 253, 1), rgba(99, 236, 251, 1), rgba(211, 247, 250, 1), rgba(237, 253, 254, 1))  ">
+    <GridLayout columns="*,auto, auto">
+        <StackLayout col="0" horizontalAlignment="left" verticalAlignment="center">
+            <Label class="fan" text="ZAIKO FACTORY" style="font-size: 20px;"></Label>
+        </StackLayout>
+        <Button col="1" text="&#xf508;" class="fas" (tap)="cerrarSesion()"></Button>
+        <Label col="2" text="&#xf0c9;" [nsRouterLink]="['/menu']" class="fas" style="font-size: 24; color: rgb(0, 0, 0); " tap="toggleDrawer" margin='10'></Label>
+    </GridLayout>
+</ActionBar>
+<ScrollView style="background-color:#edfdfe;" backgroundImage="~/app/images/inventario.jpg">
+    <StackLayout>
+        <StackLayout style="background-color:white;" backgroundImage="~/app/images/inventario2.jpg">
+            <Label class="titulo" textAlignment="center" horizontalAlignment="stretch"  margin="30px" width="80%"  text="Vista General" class="fab titul_big"></Label>
+            <label ></label>
+            <Label  class="titulo" textAlignment="left" horizontalAlignment="stretch" margin="0px" width="80%" text="Panel de Gestion" class="fab titul_big"></Label>
+        </StackLayout>
+    </StackLayout>
+</ScrollView>
+
+<GridLayout style="background: linear-gradient( rgba(224, 251, 255, 0.7), rgb(88, 230, 252), #58e6fc, #49e3fb);">
+    <Image src="~/app/images/inventario.jpg" stretch="aspectFill" style="opacity: 0.5;" />
+</GridLayout>
+
+<ScrollView>
+    <StackLayout >
+        <DockLayout stretchLastChild="true"  margin="20">
+            <StackLayout dock="top">
+                <Label class="fan texto_centrado" text="Vista General" height="40" marginTop="20" style="font-size: 30vw;"></Label>
+                <Label class="fan texto_centrado" text="Panel de Gestion" height="40" marginTop="20" style="font-size: 30vw;"></Label>
+                <Label class="fan texto_centrado" text="" height="90"></Label>
+                <StackLayout style="background-color: #00dbfd;width: 90%;box-shadow: 0px 1px 4px 1px white;" class="card" orientation="vertical" >
+                    <Label text="Informes" class="fan card-title"></Label>
+                    <Label text="Ver más" class="fan card-link" color="white"></Label>
+                </StackLayout>
+                <StackLayout  style="background-color: #00c2e5;width: 90%;box-shadow: 0px 1px 4px 1px white;" class="card" orientation="vertical">
+                    <Label text="Stock" class="fan card-title"></Label>
+                    <Label text="Ver más" class="fan card-link" color="white"></Label>
+                </StackLayout>
+                <StackLayout  style="background-color: #009ac0;width: 90%;box-shadow: 0px 1px 4px 1px white;" class="card" orientation="vertical">
+                    <Label text="Usuarios" class="fan card-title"></Label>
+                    <Label text="Ver más" class="fan card-link" color="white"></Label>
+                </StackLayout>
+                <StackLayout style="background-color: #037a9b; width: 90%;box-shadow: 0px 1px 4px 1px white;" class="card" orientation="vertical">
+                    <Label text="Alertas" class="fan card-title"></Label>
+                    <Label text="Ver más" class="fan card-link" color="white"></Label>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout  dock="top">
+                <StackLayout margin="20" orientation="vertical">
+                    <Image src="~/app/images/este_mes.png" class="imagen" />
+                </StackLayout>
+                <StackLayout margin="20" orientation="vertical">
+                    <Image src="~/app/images/mes_mes.png" class="imagen" />
+                </StackLayout>
+            </StackLayout>
+            <Button text="Regresar..." backgroundColor="#FF4500" color="white" fontSize="18" marginTop="16" [nsRouterLink]="['/home']" pageTransition="slideRight"></Button>
+        </DockLayout>
+    </StackLayout>
+</ScrollView>
+
+
+

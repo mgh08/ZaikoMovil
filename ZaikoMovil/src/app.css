@@ -1,0 +1,478 @@
+@import '@nativescript/theme/css/core.css';
+@import '@nativescript/theme/css/default.css';
+
+/* Place any CSS rules you want to apply on both iOS and Android here.
+This is where the vast majority of your CSS code goes. */
+
+.far {
+    font-family: "Font Awesome 5 Free", "fa-regular-400";
+}
+
+.fab {
+    font-family: "Font Awesome 5 Brands", "fa-brands-400";
+}
+
+.fas {
+    font-family: "Font Awesome 5 Free", "fa-solid-900";
+}
+
+
+.texto_centrado{
+    text-align: center;
+    font-size: 16px;
+}
+
+DockLayout{
+    font-family: "Poppins", sans-serif;
+} 
+
+StackLayout{
+    font-family: "Poppins", sans-serif;
+}
+
+.titul_big{
+    font-size: 24;
+    color: #4f4f4f;
+    font-weight: normal;
+}
+
+.orden{
+    color: white;
+    font-family: 'copperplateGothitBold';
+    font-size: 25%;
+}
+
+.imagen {
+    width: 100%;
+    height: auto;
+}
+
+
+.card {
+    background-color: #bcc90d; 
+    padding: 20;
+    border-radius: 5;
+    border: 2px solid black; 
+    margin-bottom: 40; 
+}
+
+.card-title {
+    font-size: 20;
+    font-weight: bold;
+    color: #000;
+}
+
+
+.card-link {
+    font-size: 20px;
+    color: red;
+}
+
+.titulo{
+    color: white;
+}
+.background {
+    background-image: url("~/app/images/gestion_inventario_negra.jpg");
+    background-size: cover;
+    
+}
+
+.horizontal-line {
+    height: 1;
+    background-color: lightgray;
+    margin: 10;
+    margin-top: 20;
+    margin-bottom: 20;
+}
+
+/* barra de navegacion */
+
+.barraNav{
+    background: linear-gradient(#1fd9f1,#65edfb,#a4f6fd);
+    height: 200px;
+}
+
+.barraNav StackLayout image{
+    padding: 20px;
+    width: 350px;
+}
+
+.barraNav GridLayout button{
+    font-size: 25px;
+    color: white;
+    background: transparent;
+}
+
+
+/* /Contenido/ */
+
+.contenido{
+    background: linear-gradient(#cefcff,white); 
+}
+
+.titulo1 {
+    text-align: center;
+    font-size: 60;
+    padding: 30;
+    color: #000;
+    font-weight: 500;
+}
+
+.terminos {
+    font-size: 15;
+    margin-bottom: 20px;
+    color: #000;
+    padding: 15;
+    text-align: center;
+}
+
+.btnRegistro{
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 500;
+    background: #1fd9f1;
+    border: solid 1px transparent;
+    transition: all 300ms ease;
+}
+
+.subContenido{
+    background: #c1faff;
+    margin-top: 250px;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-bottom: 250px;
+    padding: 20;
+    padding-top: 50;
+    padding-bottom: 50;
+    border-radius: 15px;
+    color: black;
+}
+
+.text1-subcontenido{
+    font-size: 30;
+    margin-right: 35px;
+    font-weight: 400;
+}
+
+.subContenido2{
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 200;
+}
+
+/* /Sobre Nosotros/ */
+
+.sobreNosotros {
+    background: linear-gradient(#1fd9f1,#03bcd7,#0696b4);
+    padding-bottom: 80;
+}
+
+.sobreNosotros Image{
+    width: 400px;
+}
+
+.sobreNosotros-Contenido{
+    width: 500px;
+    margin-left: 30;
+    color: black;
+    font-size: 20px;
+}
+
+.sobreNosotros-image{
+    margin-top: 200;
+    margin-left: 15;
+}
+
+.btn-sbns{
+    background: #1fd9f1;
+    border-radius: 15px;
+    color:white;
+    width: 100;
+}
+
+/* /Paquetes/ */
+.container-paquetes{
+    background: white;
+}
+
+.texto-paquetes-1{
+    margin-top: 50;
+    margin-bottom: 50;
+    text-align: center;
+    color: #65edfb;
+    letter-spacing: 0.3px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.texto-paquetes-2{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 50;
+}
+
+.tarjetas{
+    border-width: 1;
+    width: 350;
+    padding: 60px 120px;
+    border-color: #e6e6e6;
+    border-radius: 30px;
+    margin: 80px;
+    background: #ecfeff;
+}
+
+.tarjeta-image{
+    margin-top: 50;
+    width: 240px;
+}
+
+.text-tarjeta-1{
+    font-size: 24px;
+    margin-top: 40px;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+}
+
+.text-contenido-tarjeta{
+    margin-top: 30;
+    color: black;
+    text-align: center;
+    font-size: 20;
+    font-weight: 200;
+    margin-bottom: 50;
+}
+
+.btn-tarjetas{
+    width: 250;
+    height: 90;
+    border-radius: 10;
+    margin-bottom: 20px;
+    background: #65edfb;
+    font-size: 17;
+    padding: 20;
+    margin-bottom: 50;
+    font-weight: 500;
+}
+
+/*Proyectos*/
+
+.proyectos{
+    background: linear-gradient(#1fd9f1,#65edfb,#a4f6fd,#cefcff,#ecfeff);
+}
+
+.titulo-proyectos1{
+    font-size: 24;
+    color: black;
+    font-weight: 500;
+    text-align: center;  
+}
+
+.titulo-proyectos2{
+    font-size: 17;
+    color: black;
+    font-weight: 400;
+    text-align: center;  
+    margin-bottom: 50;
+}
+
+.imagen-proyectos{
+    border-radius: 15px;
+    margin-left: 50;
+    margin-right: 50;
+    margin-top: 20;
+
+}
+
+.btn-proyectos{
+    margin-top: 50;
+    width: 130;
+    padding: 1em;
+    font-weight: 600;
+    background: #1fd9f1;
+    margin-bottom: 50;
+    border-radius: 15px;
+    color:white;
+}
+
+/*Testimonios*/
+
+.testimonios{
+    background:#ecfeff;
+}
+
+.texto-testimonios-1{
+    font-size: 40;
+    color: black;
+    font-weight: 500;
+    text-align: center;  
+}
+
+.texto-testimonios-2{
+    margin-top: 20;
+    margin-bottom: 50;
+    text-align: center;
+    color: #65edfb;
+    letter-spacing: 0.3px;
+    font-size: 16px;
+    font-weight: 500;
+    width: 370;
+}
+
+.imagen-testimonios{
+    margin-top: 20;
+    margin-bottom: 20;
+    width: 500px;
+    border-radius: 100%;
+}
+
+.texto-testimonios-3{
+    position: relative;
+    font-size: 14px;
+    line-height: normal;
+    margin-bottom: 30px;
+    color: black;
+    text-align: center;
+    padding-right:50;
+    padding-left:50;
+}
+
+.contenedor-testimonios{
+    margin-bottom: 30;
+}
+
+.texto-testimonios-4{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: #03bcd7;
+}
+
+.texto-testimonios-5{
+    text-align: center;
+    font-size: 12px;
+    color: black;
+    margin-bottom: 50;
+}
+
+.currousel label{
+    font-size: 30rem;
+    color: #1fd9f1;
+    padding: 20;
+}
+
+/* Contacto */
+
+.contendor-contacto{
+    background: linear-gradient(#ecfeff,#cefcff,#a4f6fd,#65edfb);
+}
+
+.contacto{
+    padding: 10;
+    margin: 5;
+    border-width: 2;
+    border-color: white;
+    border-radius: 10;
+    margin: 20;
+    background: linear-gradient(#1fd9f1,#03bcd7,#0696b4);
+    box-shadow: 0px 1px 4px 1px white;
+    margin-top: 25;
+}
+
+.text-contacto-0{
+    font-size: 20;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 5;
+    font-weight: 600;
+}
+
+.text-contacto-1{
+    color: white;
+    text-align: center;
+    font-size: 20;
+    font-weight: 200;
+    margin-bottom: 10;
+    width: 200;
+}
+
+.btn-contacto{
+    background: linear-gradient(#03bcd7,#0696b4);
+    color: white;
+    border-radius: 20;
+    border-width: 2;
+    border-color: white;
+    width: 150;
+}
+
+/* footer */
+
+.pie-pagina{
+    background: linear-gradient(#65edfb,#03bcd7,rgb(6, 150, 180));
+}
+
+.pie-pagina image{
+    margin-top: 50;
+    margin-bottom: 20;
+    width: 450px;
+}
+
+.text-footer-0{
+    letter-spacing: 0.3px;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-size: 23;
+    margin-bottom: 20;
+}
+
+.text-footer-1{
+    color: black;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18;
+    width: 300;
+    margin-bottom: 20;
+}
+
+.text-footer-2{
+    color: black;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18;
+    width: 300;
+    margin-bottom: 20;
+}
+
+.text-footer-3{
+    letter-spacing: 0.3px;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-size: 23;
+    margin-bottom: 7;
+    margin-top: 20;
+}
+
+.pie-pagina-2{
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #0c7792;
+    color: white;
+    font-weight: 500;
+}
+
+.btn-redes{
+    margin-top: 20;
+    margin-bottom: 20;
+}
+
+.fab{
+    background: transparent;
+    box-shadow: none;
+    font-size: 30px;
+    color: red;
+}

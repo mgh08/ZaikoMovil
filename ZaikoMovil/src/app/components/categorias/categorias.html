@@ -1,0 +1,38 @@
+<ActionBar>
+    <Label text="Tienda Virtual"></Label>
+
+</ActionBar>
+
+
+<StackLayout backgroundColor="#7aedfd" padding="12">
+    <Label textAlignment="center" text="Categorías" class="fas titul_big"></Label>
+    <Button text="Regresar..." backgroundColor="#FF4500" color="white" fontSize="18" marginTop="16" [nsRouterLink]="['/menu']" pageTransition="slideRight"></Button>
+    <Button text="Leer categorías" backgroundColor="#FF8C00" color="white" fontSize="18" marginTop="5" (tap)="obtenerTodos()"></Button>
+
+
+    <StackLayout >
+        <ListView height="400" [items]="categorias" (itemTap)="onItemTap($event)" class="list-group">
+            <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                <GridLayout rows="*, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *"
+                            columns="*, *, *, *">
+                    <Label text="Id" class="header-cell " col="0"></Label>
+                    <Label text="Nombre" class="header-cell " col="1"></Label>
+                    <Label text="Descripción" class="header-cell " col="2"></Label>
+                    <Label text="Acciones" class="header-cell " col="3"></Label>
+                    <Label [text]="item.id" col="0" row="1" class="fas list-group-item"></Label>
+                    <Label [text]="item.nombre_categoria" col="1"  row="1" class="fas list-group-item"></Label>
+                    <Label [text]="item.descripcion" col="2" row="1" class="fas list-group-item"></Label>
+                    <GridLayout col="3" row="1" columns="*, *, *" height="80%">
+                        <Label text="&#xf044;" row="1" col="1" class="far list-group-item"
+                               (tap)="editarCat(item)"></Label>
+                        <Label text="&#xf2ed;" row="1" col="0" class="far list-group-item"
+                               (tap)="eliminarCat(item)"></Label>
+                    </GridLayout>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+
+    <Button text="Crear categoría" (tap)="agregarCat()" backgroundColor="#4CAF50" color="white" fontSize="18" marginTop="16"></Button>
+
+</StackLayout>

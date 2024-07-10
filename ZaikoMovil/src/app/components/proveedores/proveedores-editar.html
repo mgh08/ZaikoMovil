@@ -1,0 +1,31 @@
+
+<ActionBar>
+    <Label text="Editar Proveedor"></Label>
+</ActionBar>
+
+<ScrollView>
+    <StackLayout backgroundColor="#7aedfd" padding="16">
+        <Label textAlignment="center" text="Editar Proveedor" class="titul_big" fontSize="24" marginBottom="16"></Label>
+        <GridLayout columns="auto, *" rows="auto, auto, auto, auto, auto, auto, auto, auto" width="100%" horizontalAlignment="center" marginTop="20">
+            <Label text="ID: " row="0" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='id' row="0" col="1" class="fas" color="orangered" editable="false" backgroundColor="#e0e0e0"></TextField>
+
+            <Label text="Nombre: " row="1" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='nombre' maxLength="100" row="1" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'nombre')"></TextField>
+
+            <Label text="Nit: " row="2" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='nit' maxLength="100" row="2" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'nit')"></TextField>
+
+            <Label text="telefono: " row="3" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='telefono' maxLength="100" row="3" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'telefono')"></TextField>
+
+            <Label text="Correo: " row="4" col="0" class="fas" verticalAlignment="middle"></Label>
+            <TextField [text]='correo_electronico' maxLength="100" row="4" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'correo_electronico')"></TextField>
+
+            <Button [text]="boton" class="fas" row="6" col="0" colSpan="2" (tap)="operar()" backgroundColor="#4CAF50" color="white" fontSize="18" marginTop="16"></Button>
+
+            <Button text="&#xf060;  Cancelar" class="fas" row="7" col="0" colSpan="2" [nsRouterLink]="['/proveedores']" backgroundColor="#f44336" color="white" fontSize="18" marginTop="8"></Button>
+        </GridLayout>
+    </StackLayout>
+</ScrollView>
+

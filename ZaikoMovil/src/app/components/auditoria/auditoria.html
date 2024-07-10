@@ -1,0 +1,56 @@
+<ActionBar style="opacity: 1; background: linear-gradient(rgba(211, 247, 250, 1), rgba(99, 236, 251, 1), rgba(0, 219, 253))  ">
+    <GridLayout columns="*, auto">
+        <Label col="1" text="&#xf08b;" (tap)="onLabelTap($event)" [nsRouterLink]="['/menu']" class="fas" style="font-size: 24px; color: white; rotate: deg;" tap="toggleDrawer" margin='10'></Label>
+        <StackLayout horizontalAlignment="left" verticalAlignment="middle">
+            <Image src="~/app/images/logo.png" stretch="aspectFit" width="100" margin="10"/>
+        </StackLayout>
+    </GridLayout>
+</ActionBar>
+
+<GridLayout style="background: linear-gradient( rgba(224, 251, 255, 0.7), rgb(88, 230, 252), #58e6fc, #49e3fb);">
+    <Image src="~/app/images/inventario.jpg" stretch="aspectFill" style="opacity: 0.4;" />
+</GridLayout>
+<ScrollView>
+    <DockLayout stretchLastChild="true">
+        <StackLayout dock="bottom" height="40" backgroundColor="#F1F1F1">
+            <GridLayout columns="*, *, *" height="100%">
+                <Label col="0" textAlignment="center" text="&#xf015;" class="fas titul_big"></Label>
+                <Label col="1" textAlignment="center" text="&#xf2b9;" class="fas titul_big"></Label>
+                <Label col="2" textAlignment="center" text="&#xf095;" class="fas titul_big"></Label>
+            </GridLayout>
+        </StackLayout>
+        <StackLayout dock="bottom" height="40">
+            <Label class="fan" textAlignment="center" text="© 2024 infinite cod - Todos los Derechos Reservados"></Label>
+        </StackLayout>
+        <StackLayout dock="top" >
+            <!--<Button style= " color: white; border-radius: 10; background: linear-gradient( #72e0ee, #0d323f); font-size: 20vm; height: 90px; width: 250px; margin: 20;" text="Volver" [nsRouterLink]="['/inventario']" pageTransition="slide" clearHistory="true"></Button>-->
+            <Label class="fan texto_centrado" text="AUDITORIA" height="40" marginBottom="40" marginTop="40" style=" color: white; font-size: 30vw;"></Label>
+        </StackLayout>
+    </DockLayout>
+
+    <StackLayout style="background: linear-gradient( rgba(224, 251, 255, 0.7), rgb(88, 230, 252), #58e6fc, #49e3fb);"  dock="top" ></StackLayout>
+</ScrollView>
+
+<GridLayout columns="*" rows="auto, *" dock="top" style="background: linear-gradient(#00dbfd, #8bf7fb, #9ef9ff, #5bf1ff, #00dbfd); border-width: 2px; border-color: white; border-radius: 8px; color: white; width: 90%; height: 65%;box-shadow: 0px 1px 4px 1px white;">
+    <ScrollView>
+        <DockLayout stretchLastChild="true">
+            <StackLayout dock="top">
+                <Label textAlignment="center" text="AUDITORIA" class="fas titul_big" fontSize="30"  height="70"></Label>
+                <StackLayout>
+                    <GridLayout>
+                        <Button class="man texto_centrado"  marginTop="25" color="white" fontSize="15" style="color:white; border-radius: 25px; background: linear-gradient( rgba(9, 102, 132), rgb(12, 67, 92 ), #0d323f, #1d5b6d);" text="Generar backup de la base de datos"></Button>
+                    </GridLayout>
+                    <GridLayout>
+                        <Button class="man texto_centrado" marginTop="25"  color="white" fontSize="15" style="color:white; border-radius: 25px; background: linear-gradient( rgba(9, 102, 132), rgb(41, 117, 136), #0d323f, #1d5b6d);" text=" Restablecer el backup de la base de datos"></Button>
+                    </GridLayout>
+                    <GridLayout>
+                        <Button class="man texto_centrado" marginTop="25" color="white" fontSize="15" style="color:white; border-radius: 25px; background: linear-gradient( rgba(9, 102, 132), rgb(36, 161, 192), #0d323f, #1d5b6d);" text=" Registrar log"></Button>
+                    </GridLayout>
+                    <GridLayout>
+                        <Button class="man texto_centrado" marginTop="25"  color="white" fontSize="15" style="color:white; border-radius: 25px; background: linear-gradient(rgba(9, 102, 132), rgb(56, 203, 239), #0d323f, #1d5b6d);" text=" Generar informe de log"></Button>
+                    </GridLayout>
+                </StackLayout>
+            </StackLayout>
+        </DockLayout>
+    </ScrollView>
+</GridLayout>

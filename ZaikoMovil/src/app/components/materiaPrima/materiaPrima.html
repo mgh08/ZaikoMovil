@@ -1,0 +1,28 @@
+<ActionBar>
+    <Label text="Materia Prima"></Label>
+
+</ActionBar>
+
+
+<StackLayout backgroundColor="#7aedfd">
+    <Label textAlignment="center" text="Materia Prima" class="fas titul_big"></Label>
+    <Button text="Regresar..." [nsRouterLink]="['/menu']" pageTransition="slideRight"></Button>
+    <Button text="Leer materia prima" (tap)="obtenerTodos()"></Button>
+
+
+    <StackLayout>
+        <Label [text]="mensaje" padding="5"></Label>
+        <ListView height="250" [items]="materiaPrima" (itemTap)="onItemTap($event)" class="list-group">
+            <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                <GridLayout columns="30, 60, 100, *, *, *, *, *, *, auto, auto">
+                    <Label text="&#xf2ed;" col="9" class="far list-group-item" (tap)="eliminar(item)"></Label>
+                    <Label text="&#xf044;" col="10" class="far list-group-item" (tap)="editar(item)"></Label>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+    
+
+    <Button text="Crear Materia Prima" (tap)="agregar()" class="-primary"></Button>
+
+</StackLayout>

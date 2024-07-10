@@ -1,0 +1,162 @@
+<ActionBar class="barraNav">
+    <GridLayout columns="*, auto">
+        <StackLayout col="0" horizontalAlignment="left" verticalAlignment="center">
+            <Image src="~/app/images/logo.png" stretch="aspectFit"/>
+        </StackLayout>
+        <button col="1" pageTransition="slide" text="&#xf007;" class="fas" tap="toggleDrawer" [nsRouterLink]="['/login']"></button>
+    </GridLayout>
+</ActionBar>
+
+<ScrollView>
+    <DockLayout stretchLastChild="true">
+        <StackLayout class="contenido" dock="top">
+            <label class="titulo1" text="Gestiona tu inventario de forma sencilla ¡Registrate!" textWrap="true"></label>
+            <Label class="terminos" text="Sujeto a Terminos y Condiciones"></Label>
+            <Button class="btnRegistro" text="Registrate Ahora" [nsRouterLink]="['/registro']" pageTransition="slide"></Button>
+            <StackLayout class="subContenido" orientation="horizontal">
+                    <Label class="text1-subcontenido" text="¿Qué es la&#10;gestión de&#10;inventario?" textWrap="true"></Label>
+                <StackLayout class="subContenido2">
+                    <Label text="El sistema de gestión de inventario controla y rastrea los niveles de inventario, los pedidos, las ventas y las entregas de una empresa. Ayuda a identificar la cantidad correcta de existencias para ordenar." textWrap="true"></Label>
+                </StackLayout>
+            </StackLayout> 
+            <StackLayout><Image src="~/app/images/wave/wave.png" stretch="aspectFit" width="100%" /></StackLayout>
+        </StackLayout>
+
+        <StackLayout class="sobreNosotros" dock="top"  marginTop="-3" orientation="horizontal">
+            <StackLayout class="sobreNosotros-Contenido">
+                <Label text="¡Bienvenido a&#10; InfiniteCode!" textWrap="true" style="font-weight: 500;font-size: 25px;"></Label>
+                <label></label>
+                <Label text="En InfiniteCode, nos especializamos en la gestión de inventarios. Nuestra empresa se enorgullece de ofrecer soluciones de gestión de inventarios muy intuitivas, accesibles económicamente y centradas en el éxito del cliente." textWrap="true" style="font-weight: 200;"></Label> 
+                <label></label>
+                <GridLayout columns="auto, *">
+                    <Button class="btn-sbns" text="Saber Mas" [nsRouterLink]="['/registro']" pageTransition="slide" col="0"></Button>
+                </GridLayout>            </StackLayout>
+            <StackLayout class="sobreNosotros-image">
+                <Image src="~/app/images/logo/img-text.png" stretch="aspectFit"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout class="container-paquetes" dock="top">
+
+            <StackLayout>
+                <Label class="texto-paquetes-1" text="Adquiere alguno de nuestros paquetes" textWrap="true"></Label>
+                <Label class="texto-paquetes-2" text="GESTIONA TU INVENTARIO" textWrap="true"></Label>
+            </StackLayout>
+
+            <StackLayout class="tarjetas-paquetes">
+                
+                <StackLayout class="tarjetas" orientation="vertical">
+                    <Image class="tarjeta-image" src="~/app/images/logo-planes/inventario-01.png" stretch="aspectFit"/>
+                    <Label class="text-tarjeta-1" text="Inventario Basico"></Label>
+                    <Label class="text-contenido-tarjeta" text="Con esta opción, podrás realizar un seguimiento de tus productos, controlar las existencias y mantener un registro ordenado de tus artículos." textWrap="true"></Label>
+                        
+                </StackLayout>
+
+                <StackLayout class="tarjetas" orientation="vertical">
+                    <Image class="tarjeta-image" src="~/app/images/logo-planes/inventario-02.png" stretch="aspectFit"/>
+                    <Label class="text-tarjeta-1" text="Inventario Avanzado"></Label>
+                    <Label class="text-contenido-tarjeta" text="El inventario avanzado es perfecto para empresas en crecimiento que requieren un mayor nivel de control y funcionalidad en su gestión de inventario." textWrap="true"></Label>
+                        
+                </StackLayout>
+
+                <StackLayout class="tarjetas" orientation="vertical">
+                    <Image class="tarjeta-image" src="~/app/images/logo-planes/inventario-03.png" stretch="aspectFit"/>
+                    <Label class="text-tarjeta-1" text="Inventario Premium"></Label>
+                    <Label class="text-contenido-tarjeta" text="Con esta opción, disfrutarás de características de vanguardia, como el rastreo de lotes, gestión de múltiples ubicaciones y control de personal." textWrap="true"></Label>
+                        
+                </StackLayout>
+
+                <StackLayout >
+                    <Button class="btn-tarjetas" text="Consigue una prueba gratuita" [nsRouterLink]="['/registro']" pageTransition="slide" col="0" textWrap="true"></Button>
+                </StackLayout>
+
+            </StackLayout>
+
+            <StackLayout><Image src="~/app/images/wave/wave2.png" stretch="aspectFit" width="100%" /></StackLayout>
+        </StackLayout>
+        
+        <StackLayout class="proyectos" dock="top">
+            <Label class="titulo-proyectos1" text="PROYECTOS"></Label>
+            <Label class="titulo-proyectos2" text="Estos son algunos de nuestros proyectos"></Label> 
+
+            <StackLayout>
+                <Image class="imagen-proyectos" src="~/app/images/proyectos/proyecto1.png" stretch="aspectFit"/>
+                <Image class="imagen-proyectos" src="~/app/images/proyectos/proyecto2.png" stretch="aspectFit"/>
+                <Image class="imagen-proyectos" src="~/app/images/proyectos/proyecto3.png" stretch="aspectFit"/>
+                <Image class="imagen-proyectos" src="~/app/images/proyectos/proyecto4.png" stretch="aspectFit"/>
+                <Image class="imagen-proyectos" src="~/app/images/proyectos/proyecto5.png" stretch="aspectFit"/>
+                <Image class="imagen-proyectos" src="~/app/images/proyectos/proyecto6.png" stretch="aspectFit"/>
+            </StackLayout>    
+            
+            <Button class="btn-proyectos" [nsRouterLink]="['/tienda']" pageTransition="slide" text="Más proyectos"></Button>                      
+        </StackLayout>
+
+
+        <StackLayout class="testimonios" dock="top">
+
+            <StackLayout >
+
+                <Label class="texto-testimonios-1" text="Testimonios"></Label>
+                <Label class="texto-testimonios-2" text="Estos son algunos testimonios de nuestros clientes" textWrap="true"></Label>
+
+            </StackLayout>
+
+            <GridLayout class="currousel" columns="auto, *, auto" rows="auto">
+
+                <Label col="0" text="&#xf137;" class="fas"  tap="toggleDrawer"></Label>
+                    <Image col="1" class="imagen-testimonios" src="~/app/images/clientes/cliente1.jpg" />
+                <Label col="2" text="&#xf138;" class="fas" tap="toggleDrawer" ></Label>
+
+            </GridLayout>
+            
+
+            <GridLayout rows="auto" columns="auto, *, auto">
+
+                    <StackLayout class="contenedor-testimonios" col="1">
+                        <Label class="texto-testimonios-3" text="Desde que implementamos 'InfiniteCode', nuestro proceso de abastecimiento se ha vuelto más eficiente. La automatización impecable de las compras nos ha ayudado a mantener el stock adecuado y a evitar escaseces." textWrap="true"></Label>
+                        <Label class="texto-testimonios-4" text="Oscar Moreno" textWrap="true"></Label>
+                        <Label class="texto-testimonios-5" text="CEO" textWrap="true"></Label>
+                    </StackLayout>
+
+            </GridLayout>
+            
+        </StackLayout>
+
+        <StackLayout class="contendor-contacto" dock="top">
+
+            <StackLayout class="contacto">
+
+                <Label text="¡Hablemos!" class="text-contacto-0" ></Label>
+                <Label class="text-contacto-1" text="Contáctanos para iniciar tu proyecto y haremos que tu visión se vuelva realidad." textWrap="true"></Label>
+                <Button text="&#xe4e8; Contacto" tap="onContactButtonTap" class="fas btn-contacto"> </Button>
+                
+            </StackLayout>
+
+        </StackLayout>
+
+        <StackLayout class="pie-pagina" dock="top">
+            <Image src="~/app/images/logo.png" stretch="aspectFit"/>
+            <Label class="text-footer-0" text="InfiniteCode" ></Label>
+            <Label class="text-footer-1" text="En Infinite Code, la creatividad se une con la tecnología para crear un universo infinito de posibilidades. Nos esforzamos por alcanzar la excelencia en cada línea de código que escribimos." textWrap="true"></Label>
+            <Label class="text-footer-2" text="¡Únete a nosotros en este viaje hacia el infinito y más allá!" textWrap="true"></Label>
+            <Label class="text-footer-3" text="Sigenos"></Label>
+
+            <StackLayout orientation="horizontal" horizontalAlignment="center"class="btn-redes">
+                
+                <button  text="&#xf113;" class="fab"></button>
+                <button  text="&#xf09a;" class="fab"></button>
+                <button  text="&#xf099;" class="fab"></button>
+                <button  text="&#xf167;" class="fab"></button>
+                
+            </StackLayout>
+
+        </StackLayout>
+
+        <StackLayout class="pie-pagina-2" dock="top">
+            <Label class="fan" text="© 2023 infinite cod - Todos los Derechos Reservados" textWrap="true"></Label>
+        </StackLayout>
+
+    </DockLayout>
+
+
+</ScrollView>

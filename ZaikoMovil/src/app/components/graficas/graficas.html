@@ -1,0 +1,28 @@
+<!-- <link href="https://fonts.googleapis.com/css2?family=TuFuentePersonalizada&display=swap" rel="stylesheet"> -->
+
+<ActionBar
+    style="opacity: 1; background: linear-gradient(rgba(122, 237, 253, 1), rgba(99, 236, 251, 1), rgba(211, 247, 250, 1), rgba(237, 253, 254, 1))  ">
+    <GridLayout columns="*,auto, auto">
+        <StackLayout col="0" horizontalAlignment="left" verticalAlignment="center">
+            <Label class="fan" text="ZAIKO FACTORY" style="font-size: 20px;"></Label>
+        </StackLayout>
+        <Label col="1" text="&#xf508;" class="fas" style="font-size: 24; color: rgb(0, 0, 0);" tap="toggleDrawer"
+            margin='10'></Label>
+        <Label col="2" text="&#xf0c9;" [nsRouterLink]="['/menu']" class="fas" style="font-size: 24; color: rgb(0, 0, 0);" tap="toggleDrawer"
+            margin='10'></Label>
+    </GridLayout>
+</ActionBar>
+<ScrollView>
+    <DockLayout class="background">
+        <StackLayout stretchLastChild="true" marginTop="30"> <!-- Espacio entre la barra de navegación y las imágenes -->
+            <Image src="~/app/images/grafica.jpg" stretch="aspectFit" marginBottom="30" />
+            <Image src="~/app/images/diagrama_de_barras.jpg" stretch="aspectFit" marginBottom="20" />
+            <Image src="~/app/images/diagrama_circular.jpg" stretch="aspectFit" marginBottom="20" />
+        </StackLayout>
+    </DockLayout>
+</ScrollView>
+
+
+
+
+

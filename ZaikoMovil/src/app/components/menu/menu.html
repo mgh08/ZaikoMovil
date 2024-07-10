@@ -1,0 +1,36 @@
+<ActionBar style="opacity: 1; background: linear-gradient(rgba(211, 247, 250, 1), rgba(99, 236, 251, 1), rgba(0, 219, 253))  ">
+    <GridLayout columns="*, auto">
+        <Label col="1" text="&#xf08b;" (tap)="onLabelTap($event)" [nsRouterLink]="['/admin']" class="fas" style="font-size: 24; color: white; rotate: 180;" tap="toggleDrawer" margin='10'></Label>
+        <StackLayout horizontalAlignment="left" verticalAlignment="middle">
+            <Image src="~/app/images/logo.png" stretch="aspectFit" width="100" margin="10"/>
+        </StackLayout>
+    </GridLayout>
+</ActionBar>
+
+<GridLayout style="background: linear-gradient( rgba(224, 251, 255, 0.7), rgb(88, 230, 252), #58e6fc, #49e3fb);">
+    <Image src="~/app/images/inventario.jpg" stretch="aspectFill" style="opacity: 0.4;" />
+</GridLayout>
+
+<ScrollView>
+    <DockLayout stretchLastChild="true">
+        <StackLayout dock="top" class="fan">
+            <Label textAlignment="center" text="MENÚ" class="fas titul_big" fontSize="30" height="70"></Label>
+            <GridLayout columns="*" rows="auto, *" dock="top" marginBottom="20" style="background: linear-gradient(#00dbfd, #8bf7fb, #9ef9ff, #5bf1ff, #00dbfd); border-width: 2px; border-color: white; border-radius: 8px; color: white; width: 90%; height: 80%;box-shadow: 0px 1px 4px 1px white;">
+
+                <StackLayout>
+                    <Button text="Auditoria" [nsRouterLink]="['/auditoria']" pageTransition="slide" marginBottom="40" style="background-color: #00dbfd; border-radius: 8px;"></Button>
+                    <Button text="productos" [nsRouterLink]="['/productos']" pageTransition="slide" marginBottom="40" style="background-color: #00c2e5; border-radius: 8px;"></Button>
+                    <Button text="Materia Prima" [nsRouterLink]="['/materiaPrima']" pageTransition="slide" marginBottom="40" style="background-color: #00c2e5; border-radius: 8px;"></Button>
+                    <Button text="Proveedores" [nsRouterLink]="['/proveedores']" pageTransition="slide" marginBottom="40" style="background-color: #009ac0; border-radius: 8px;"></Button>
+                    <Button text="Clientes" [nsRouterLink]="['/listarclientes']" pageTransition="slide" marginBottom="40" style="background-color: #037a9b; border-radius: 8px;"></Button>
+                    <Button text="categorías" [nsRouterLink]="['/categorias']" pageTransition="slide" marginBottom="40" style="background-color: #037a9b; border-radius: 8px;"></Button>
+                    <Button text="Gráficas" [nsRouterLink]="['/graficas']" pageTransition="slide" marginBottom="40" style="background-color: #0d627d; border-radius: 8px;"></Button>
+                    <Button text="Home" [nsRouterLink]="['/home']" pageTransition="slide" marginBottom="40" style="background-color: #105169; border-radius: 8px;"></Button>
+                </StackLayout>
+            </GridLayout>
+        </StackLayout>
+    </DockLayout>
+</ScrollView>
+
+
+

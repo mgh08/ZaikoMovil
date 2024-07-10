@@ -1,0 +1,33 @@
+<ActionBar style="opacity: 1; background: linear-gradient(rgba(211, 247, 250, 1), rgba(99, 236, 251, 1), rgba(0, 219, 253))  ">
+    <GridLayout columns="*, auto">
+        <button col="1" text="&#xf52b;" class="fas" style="font-size: 24; color: white; margin-right: 20;" tap="toggleDrawer"  backgroundColor="transparent" (tap)="onTap()"></button>
+        <StackLayout horizontalAlignment="left" verticalAlignment="middle">
+            <Image src="~/app/images/logo.png" stretch="aspectFit" width="100" margin="10" />
+        </StackLayout>
+    </GridLayout>
+</ActionBar>
+
+<DockLayout style="background: linear-gradient(  rgb(61, 229, 255), #aef4ff, #aef4ff,rgb(61, 229, 255))">
+
+    <GridLayout columns="*" rows="auto, *" dock="top" style="background: linear-gradient(#00dbfd, #8bf7fb, #9ef9ff, #5bf1ff, #00dbfd); border-width: 2; border-color: white; border-radius: 8; color: #fafafa; width: 90%; height: 65%;box-shadow: 0px 1px 4px 1px white;">
+
+        <StackLayout row="0" horizontalAlignment="center" verticalAlignment="center" style="margin-top: 50;">
+            <Label text="Recuperar Contraseña" class="h1 text-center"></Label>
+        </StackLayout>
+    
+        <StackLayout row="1" horizontalAlignment="center" verticalAlignment="center">
+            <StackLayout>
+    
+                <TextField hint="Introduce la Nueva Contraseña" fontSize="15" type="password" secure="true" />
+                <TextField hint="Repite la nueva Contraseña" fontSize="15" type="password" secure="true" style="margin-bottom: 50; margin-top: 30;"/>
+                <Button  [nsRouterLink]="['/login']" text="Cambiar Contraseña" tap="" style="margin-top: 30;border-radius: 6; background: linear-gradient(#79edff, #0ecbff);" ></Button>
+    
+            </StackLayout>
+        </StackLayout>
+    
+    </GridLayout>
+
+</DockLayout>
+
+
+

@@ -1,0 +1,37 @@
+<ActionBar>
+    <Label text="Productos"></Label>
+</ActionBar>
+
+<StackLayout backgroundColor="#7aedfd" padding="12">
+    <Label textAlignment="center" text="Productos" class="fas titul_big"></Label>
+    <Button text="Regresar" backgroundColor="#FF4500" color="white" fontSize="18" marginTop="16"
+            [nsRouterLink]="['/menu']" pageTransition="slideRight"></Button>
+    <Button text="Leer Productos" backgroundColor="#FF8C00" color="white" fontSize="18" marginTop="5"
+            (tap)="obtenerTodos()"></Button>
+
+    <ListView height="400" [items]="productos" (itemTap)="onItemTap($event)" class="list-group">
+        <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+            <GridLayout rows="auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto"
+                        columns="*, *, *, *, *">
+                <Label text="Foto" class="header-cell" col="0"></Label>
+                <Label text="Nombre" class="header-cell" col="1"></Label>
+                <Label text="Cantidad" class="header-cell" col="2"></Label>
+                <Label text="Precio" class="header-cell" col="3"></Label>
+                <Label text="Acciones" class="header-cell" col="4"></Label>
+                <Image [src]="item.foto" width="20" height="20" row="1" col="0" class="fas list-group-item"></Image>
+                <Label [text]="item.nombre" col="1" row="1" class="fas list-group-item"></Label>
+                <Label [text]="item.cantidad" col="2" row="1" class="fas list-group-item"></Label>
+                <Label [text]="item.precio" col="3" row="1" class="fas list-group-item"></Label>
+                <GridLayout col="4" row="1" columns="*, *" height="80%">
+                    <Label text="&#xf044;" row="1" col="1" class="far list-group-item"
+                           (tap)="editarCat(item)"></Label>
+                    <Label text="&#xf2ed;" row="1" col="0" class="far list-group-item"
+                           (tap)="eliminarCat(item)"></Label>
+                </GridLayout>
+            </GridLayout>
+        </ng-template>
+    </ListView>
+
+    <Button text="Crear Producto" backgroundColor="#4CAF50" color="white" fontSize="18" marginTop="16"
+            (tap)="agregarCat()"></Button>
+</StackLayout>

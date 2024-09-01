@@ -1,25 +1,25 @@
-<ActionBar
-    style="opacity: 1; background: linear-gradient(rgba(122, 237, 253, 1), rgba(99, 236, 251, 1), rgba(211, 247, 250, 1), rgba(237, 253, 254, 1))  ">
-    <GridLayout columns="*,auto, auto">
+<ActionBar class="barraNav">
+    <GridLayout columns="*, auto, auto">
         <StackLayout col="0" horizontalAlignment="left" verticalAlignment="center">
-            <Label class="fan" text="ZAIKO FACTORY" style="font-size: 20px;"></Label>
+            <Image src="~/app/images/logo.png" stretch="aspectFit"/>
         </StackLayout>
-        <Button col="1" text="&#xf508;" class="fas" (tap)="cerrarSesion()"></Button>
-        <Label col="2" text="&#xf0c9;" [nsRouterLink]="['/menu']" class="fas" style="font-size: 24; color: rgb(0, 0, 0); " tap="toggleDrawer" margin='10'></Label>
+        <Button col="1" text="&#xf2f5;" style="rotate: 180;" class="fas" (tap)="cerrarSesion()"></Button>
+        <Button col="2" text="&#xf1de;" class="fas icon"  [nsRouterLink]="['/menu']"></Button>
+        <!-- (tap)="toggleDrawer()" -->
     </GridLayout>
 </ActionBar>
-<ScrollView style="background-color:#edfdfe;">
+<ScrollView style="background-color:#edfdfe;" backgroundImage="~/app/images/inventario.jpg">
     <StackLayout>
-        <StackLayout style="background-color:white;">
-            <Label class="titulo" textAlignment="center" horizontalAlignment="stretch"  margin="30px" width="80%"  class="fab titul_big"></Label>
+        <StackLayout style="background-color:white;" backgroundImage="~/app/images/inventario2.jpg">
+            <Label class="titulo" textAlignment="center" horizontalAlignment="stretch"  margin="30px" width="80%"  text="Vista General" class="fab titul_big"></Label>
             <label ></label>
-            <Label  class="titulo" textAlignment="left" horizontalAlignment="stretch" margin="0px" width="80%" class="fab titul_big"></Label>
+            <Label  class="titulo" textAlignment="left" horizontalAlignment="stretch" margin="0px" width="80%" text="Panel de Gestion" class="fab titul_big"></Label>
         </StackLayout>
     </StackLayout>
 </ScrollView>
 
 <GridLayout style="background: linear-gradient( rgba(224, 251, 255, 0.7), rgb(88, 230, 252), #58e6fc, #49e3fb);">
-    <Image stretch="aspectFill" style="opacity: 0.5;" />
+    <Image src="~/app/images/inventario.jpg" stretch="aspectFill" style="opacity: 0.5;" />
 </GridLayout>
 
 <ScrollView>
@@ -48,15 +48,17 @@
             </StackLayout>
             <StackLayout  dock="top">
                 <StackLayout margin="20" orientation="vertical">
-                    <Image class="imagen" />
+                    <Image src="~/app/images/este_mes.png" class="imagen" />
                 </StackLayout>
                 <StackLayout margin="20" orientation="vertical">
                     <Image src="~/app/images/mes_mes.png" class="imagen" />
                 </StackLayout>
-            </StackLayout>
-            <Button text="Regresar..." backgroundColor="#FF4500" color="white" fontSize="18" marginTop="16" [nsRouterLink]="['/home']" pageTransition="slideRight"></Button>
+
+            </GridLayout>
+
+            <Button class="btn-admin" text="Regresar..." [nsRouterLink]="['/home']" pageTransition="slideRight"></Button>
+
         </DockLayout>
-    </StackLayout>
 </ScrollView>
 
 

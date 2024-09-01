@@ -1,0 +1,30 @@
+<ActionBar class="barraNav">
+    <GridLayout columns="*, auto">
+        <StackLayout col="0" horizontalAlignment="left" verticalAlignment="center">
+            <Image src="~/app/images/logo.png" stretch="aspectFit"/>
+        </StackLayout>
+        <button col="1" pageTransition="slideRight" text="&#xf060;" class="fas icon" tap="toggleDrawer" [nsRouterLink]="['/devoluciones']"></button>
+    </GridLayout>
+</ActionBar>
+
+<StackLayout class="background-page">
+    
+    <GridLayout class="container-principal" style="padding: 10;padding-bottom: 50;" columns="auto, *" rows="auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto, auto" >
+        <Label class="h1 text-center" row="0" col="0" colSpan="2" text="Editar Devoluciones"></Label>
+
+        <Label text="ID: " row="1" col="0" class="text-general" verticalAlignment="middle"></Label>
+        <TextField [text]='id' row="1" col="1" class="fas" colSpan="2" color="orangered" editable="false"></TextField>
+    
+        <Label text="Motivo: " row="2" col="0" class="fas"></Label>
+        <TextField [text]='motivo' row="2" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'motivo')"></TextField>
+    
+        <Label text="Productos: " row="3" col="0" class="fas"></Label>
+        <TextField [text]='productos' row="3" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'productos')"></TextField>
+    
+        <Label text="Foto: " row="4" col="0" class="fas"></Label>
+        <TextField [text]='foto' row="4" col="1" class="fas" color="orangered" (textChange)="inputChange($event, 'foto')"></TextField>
+    </GridLayout>
+    
+    <Button class="btn-secundario" [text]="boton" (tap)="operar()"></Button>
+
+</StackLayout>

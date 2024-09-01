@@ -21,10 +21,10 @@
                 <GridLayout columns="30, 60, 100, *, *, *, *, *, *, auto, auto">
                     <Label [text]="item.id" col="0" class="fas list-group-item"></Label>
                     <Image [src]="item.foto" width="30" height="30" col="1"></Image>
-                    <Label [text]="item.motivo" col="2" class="fas list-group-item"></Label>
-                    <Label [text]="item.productos" col="4" class="fas list-group-item texto_derecha"></Label>
-                    <Label text="&#xf2ed;" col="9" class="far list-group-item" (tap)="eliminar(item)"></Label>
-                    <Label text="&#xf044;" col="10" class="far list-group-item" (tap)="editar(item)"></Label>
+                    <Label [text]="item.motivo" col="2" class="fas"></Label>
+                    <Label [text]="item.productos" col="4" class="fas texto_derecha"></Label>
+                    <Label text="&#xf31c;" col="10" class="far editar" (tap)="editar(item)"></Label>
+                    <Label text="&#xf1f8;" col="9" class="far eliminar" (tap)="eliminar(item)"></Label>
                 </GridLayout>
             </ng-template>
         </ListView>

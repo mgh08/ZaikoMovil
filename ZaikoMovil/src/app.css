@@ -501,7 +501,7 @@ DockLayout, StackLayout, GridLayout, Label, TextField {
 }
 
 .background-page{
-   background: #1fd9f1;
+   background: #a4f6fd;
 }
 
 .container-principal{
@@ -573,23 +573,28 @@ DockLayout, StackLayout, GridLayout, Label, TextField {
 /*productos*/
 
 .btn-principal{
-    background: #0696b4;
+    background: linear-gradient(#04bdd6,#0c7892, #0696b4 );
+    /* background: #0696b4; */
     width: 90%;
     height: 50;
     margin-top: 20;
     margin-bottom: 20;
     border-radius: 10;
     font-size: 20;
+    color: white;
 }
 
 .btn-secundario{
-    background: green;
+    background: linear-gradient(#04bdd6, #073445, #04bdd6);
+    /* background: green; */
     width: 90%;
     height: 50;
     margin-top: 20;
     margin-bottom: 20;
     border-radius: 10;
     font-size: 20;
+    color: white;
+
 }
 
 /*producto editar*/

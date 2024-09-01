@@ -1,3 +1,4 @@
 # Librerías del Proyecto NativeScript
 
 npm i nativescript-exit
+ns plugin add nativescript-imagepicker

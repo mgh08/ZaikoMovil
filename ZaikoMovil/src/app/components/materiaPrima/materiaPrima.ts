@@ -95,6 +95,14 @@ export class MateriaPrimaComponent {
             });
 
     }
+    public editar(item){
+        console.log(`Editar cat: ${item.id}`)
+        this.router.navigate(['clientes-editar'], { queryParams: { id: item.id } });
+    }
+
+    public agregar(){
+        this.router.navigate(['clientes-editar']);
+    }
 
 }
 

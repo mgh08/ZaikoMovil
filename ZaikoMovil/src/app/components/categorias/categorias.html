@@ -1,14 +1,19 @@
-<ActionBar>
-    <Label text="Tienda Virtual"></Label>
-
+<ActionBar class="barraNav">
+    <GridLayout columns="*, auto">
+        <StackLayout col="0" horizontalAlignment="left" verticalAlignment="center">
+            <Image src="~/app/images/logo.png" stretch="aspectFit"/>
+        </StackLayout>
+        <button col="1" pageTransition="slideRight" text="&#xf060;" class="fas icon" tap="toggleDrawer" [nsRouterLink]="['/menu']"></button>
+    </GridLayout>
 </ActionBar>
 
 
-<StackLayout backgroundColor="#7aedfd" padding="12">
-    <Label textAlignment="center" text="Categorías" class="fas titul_big"></Label>
-    <Button text="Regresar..." backgroundColor="#FF4500" color="white" fontSize="18" marginTop="16" [nsRouterLink]="['/menu']" pageTransition="slideRight"></Button>
-    <Button text="Leer categorías" backgroundColor="#FF8C00" color="white" fontSize="18" marginTop="5" (tap)="obtenerTodos()"></Button>
+<StackLayout class="background-page">
 
+    <Label class="h1 text-center" text="Categorias" ></Label>
+    
+    <Button class="btn-principal" text="Leer Categorias" (tap)="obtenerTodos()"></Button>
+    <Button class="btn-secundario" text="Crear Categorias" (tap)="agregarCat()"></Button>
 
     <StackLayout >
         <ListView height="400" [items]="categorias" (itemTap)="onItemTap($event)" class="list-group">
@@ -32,7 +37,5 @@
             </ng-template>
         </ListView>
     </StackLayout>
-
-    <Button text="Crear categoría" (tap)="agregarCat()" backgroundColor="#4CAF50" color="white" fontSize="18" marginTop="16"></Button>
 
 </StackLayout>

@@ -1,0 +1,30 @@
+<ActionBar class="barraNav">
+    <GridLayout columns="*, auto">
+        <StackLayout col="0" horizontalAlignment="left" verticalAlignment="center">
+            <Image src="~/app/images/logo.png" stretch="aspectFit"/>
+        </StackLayout>
+        <button col="1" pageTransition="slideRight" text="&#xf060;" class="fas icon" tap="toggleDrawer" [nsRouterLink]="['/login']"></button>
+    </GridLayout>
+</ActionBar>
+
+<DockLayout class="background-page">
+
+    <GridLayout columns="*" rows="auto, *" dock="top" class="h1 container-principal">
+        <StackLayout row="1" horizontalAlignment="center" verticalAlignment="center">
+            <StackLayout>
+                <Label text="Recuperar Contraseña" class="text-center"></Label>
+    
+                <TextField class="camp-login" hint="Correo electrónico" keyboardType="email" ></TextField>
+                <TextField class="camp-login" hint="Contraseña antigua" secure="true"></TextField>
+                <TextField class="camp-login" hint="Contraseña nueva" secure="true"></TextField>
+    
+                <Button class="btn-login" text="Recuperar contraseña"></Button>
+            </StackLayout>
+        </StackLayout>
+    </GridLayout>
+    
+
+</DockLayout>
+
+
+

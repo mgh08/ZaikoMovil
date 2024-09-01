@@ -1,0 +1,33 @@
+<ActionBar class="barraNav">
+    <GridLayout columns="*, auto">
+        <StackLayout col="0" horizontalAlignment="left" verticalAlignment="center">
+            <Image src="~/app/images/logo.png" stretch="aspectFit"/>
+        </StackLayout>
+        <button col="1" pageTransition="slideRight" text="&#xf060;" class="fas icon" tap="toggleDrawer" [nsRouterLink]="['/menu']"></button>
+    </GridLayout>
+</ActionBar>
+
+<StackLayout class="background-page">
+
+    <Label class="h1 text-center" text="Devoluciones" ></Label>
+
+    <Button class="btn-principal" text="Leer devoluciones" (tap)="obtenerTodos()"></Button>
+    <Button class="btn-secundario" text="Crear Devolucion" (tap)="agregar()" ></Button>
+
+    <StackLayout>
+        <Label [text]="mensaje" padding="5"></Label>
+        <ListView height="250" [items]="devoluciones" (itemTap)="onItemTap($event)" class="list-group">
+            <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                <GridLayout columns="30, 60, 100, *, *, *, *, *, *, auto, auto">
+                    <Label [text]="item.id" col="0" class="fas list-group-item"></Label>
+                    <Image [src]="item.foto" width="30" height="30" col="1"></Image>
+                    <Label [text]="item.motivo" col="2" class="fas list-group-item"></Label>
+                    <Label [text]="item.productos" col="4" class="fas list-group-item texto_derecha"></Label>
+                    <Label text="&#xf2ed;" col="9" class="far list-group-item" (tap)="eliminar(item)"></Label>
+                    <Label text="&#xf044;" col="10" class="far list-group-item" (tap)="editar(item)"></Label>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+    
+</StackLayout>

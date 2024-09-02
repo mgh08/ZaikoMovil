@@ -17,6 +17,9 @@ import { ClientesComponent} from "~/app/components/clientes/clientes";
 import { ClientesEditarComponent} from "~/app/components/clientes/clientes-editar";
 import { DevolucionesComponent} from "~/app/components/devoluciones/devoluciones";
 import { DevolucionesEditarComponent} from "~/app/components/devoluciones/devolucionesEditar";
+import { PedidosComponent} from "~/app/components/pedidos/pedidos";
+import { PedidosEditarComponent} from "~/app/components/pedidos/pedidos-editar";
+
 
 export const appRoutes: any = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -39,6 +42,9 @@ export const appRoutes: any = [
   { path: "categorias-editar", component: CategoriasEditarComponent },
   { path: "clientes", component: ClientesComponent },
   { path: "clientes-editar", component: ClientesEditarComponent },
+  { path: "pedidos", component: PedidosComponent },
+  { path: "pedidos-editar", component: PedidosEditarComponent },
+
 
 ];
 
@@ -62,5 +68,8 @@ export const appComponents: any = [
   ClientesEditarComponent,
   DevolucionesComponent,
   DevolucionesEditarComponent,
+  PedidosComponent,
+  PedidosEditarComponent,
+
 
 ];

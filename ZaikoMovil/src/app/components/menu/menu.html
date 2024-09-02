@@ -11,8 +11,6 @@
     <DockLayout class="background-page">
         <StackLayout>
             <Label class="h1 text-center" text="MENÚ" fontSize="30" height="70"></Label>
-            <Button class="btn-menu" text="Auditoria" [nsRouterLink]="['/auditoria']" pageTransition="slide" [visibility]="verificarPermisos('ADMIN', 'GEREN') ? 'visible' : 'collapsed'"></Button>
-            <Button class="btn-menu" text="Materia Prima" [nsRouterLink]="['/materiaPrima']" pageTransition="slide" [visibility]="verificarPermisos('ADMIN', 'GEREN') ? 'visible' : 'collapsed'"></Button>
             <Button class="btn-menu" text="Productos" [nsRouterLink]="['/productos']" pageTransition="slide" ></Button>
             <Button class="btn-menu" text="Devoluciones" [nsRouterLink]="['/devoluciones']" pageTransition="slide" ></Button>
             <Button class="btn-menu" text="Proveedores" [nsRouterLink]="['/proveedores']" pageTransition="slide" ></Button>
@@ -20,7 +18,8 @@
             <Button class="btn-menu" text="Pedidos" [nsRouterLink]="['/pedidos']" pageTransition="slide" ></Button>
             <Button class="btn-menu" text="Categorías" [nsRouterLink]="['/categorias']" pageTransition="slide" ></Button>
             <Button class="btn-menu" text="Gráficas" [nsRouterLink]="['/graficas']" pageTransition="slide" [visibility]="verificarPermisos('ADMIN', 'GEREN') ? 'visible' : 'collapsed'"></Button>
-            <Button class="btn-menu" text="Home" [nsRouterLink]="['/home']" pageTransition="slide" ></Button>
+            <Button class="btn-menu" text="Home" [nsRouterLink]="['/admin']" pageTransition="slide" ></Button>
+            <Button class="btn-menu" text="Auditoria" [nsRouterLink]="['/auditoria']" pageTransition="slide" [visibility]="verificarPermisos('ADMIN', 'GEREN') ? 'visible' : 'collapsed'"></Button>
         </StackLayout>
     </DockLayout>
 </ScrollView>

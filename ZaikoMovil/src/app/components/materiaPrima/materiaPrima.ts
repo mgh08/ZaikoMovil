@@ -10,11 +10,31 @@ import { ActivatedRoute } from '@angular/router';
     templateUrl: './materiaPrima.html',
 })
 export class MateriaPrimaComponent {
+    rol: string;
+    nombreCompleto: string;
+    foto: string;
+    perfil;
     productos: any[];
     mensaje: string = "";
     materiaPrima: any[];
     public constructor(private router: Router, private apiService: ApiService, private activatedRoute: ActivatedRoute) {
         // Use the component constructor to inject providers.
+        // Use the component constructor to inject providers.
+        console.log("home")
+        console.info("Averiguando si hay datos...");
+        if (localStorage.getItem('sena.token')){
+            this.perfil = JSON.parse( localStorage.getItem('sena.user'))
+            console.log("Bienvenido "+this.perfil.nombreCompleto+"!!");
+            this.rol = this.perfil.rol
+            this.nombreCompleto = this.perfil.nombreCompleto
+            this.foto = "http://zaikofactory.pythonanywhere.com"+this.perfil.foto
+        }
+        else{
+            this.rol = ""
+            this.nombreCompleto = ""
+            this.foto = ""
+            this.router.navigate(['login']);
+        }
         this.activatedRoute.queryParams
           .subscribe((params) => {
             if(params.id){
@@ -95,6 +115,17 @@ export class MateriaPrimaComponent {
             });
 
     }
+    public editar(item){
+        console.log(`Editar cat: ${item.id}`)
+        this.router.navigate(['productos-editar'], { queryParams: { id: item.id } });
+    }
 
+    public agregar(){
+        this.router.navigate(['productos-editar']);
+    }
+
+    public verificarPermisos(...roles: string[]): boolean {
+        return roles.includes(this.rol);
+    }
 }
 

@@ -3,17 +3,37 @@ import { Router } from "@angular/router";
 import { ApiService } from './api.service';
 import { ItemEventData } from "@nativescript/core/ui/list-view";
 import { Dialogs } from '@nativescript/core'
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'categorias',
     templateUrl: './categorias.html',
 })
 export class CategoriasComponent {
+    rol: string;
+    nombreCompleto: string;
+    foto: string;
+    perfil;
+
     categorias: any[];
-    public constructor(private router: Router, private apiService: ApiService) {
+    public constructor(private router: Router, private apiService: ApiService,private activatedRoute: ActivatedRoute ) {
         // Use the component constructor to inject providers.
         this.obtenerTodos();
+        console.log("home")
+        console.info("Averiguando si hay datos...");
+        if (localStorage.getItem('sena.token')){
+            this.perfil = JSON.parse( localStorage.getItem('sena.user'))
+            console.log("Bienvenido "+this.perfil.nombreCompleto+"!!");
+            this.rol = this.perfil.rol
+            this.nombreCompleto = this.perfil.nombreCompleto
+            this.foto = "http://zaikofactory.pythonanywhere.com"+this.perfil.foto
+        }
+        else{
+            this.rol = ""
+            this.nombreCompleto = ""
+            this.foto = ""
+            this.router.navigate(['login']);
+        }
     }
 
     public obtenerTodos(){
@@ -22,6 +42,13 @@ export class CategoriasComponent {
             this.categorias = data;
         });
     }
+
+    public cerrarSesion(){
+        console.log("Eliminar sesión...")
+        localStorage.clear();
+        this.router.navigate(['login']);
+    }
+    
 
     onItemTap(args) {
         let register = this.categorias[args.index]
@@ -91,6 +118,10 @@ export class CategoriasComponent {
 
     public agregarCat(){
         this.router.navigate(['categorias-editar']);
+    }
+
+    public verificarPermisos(...roles: string[]): boolean {
+        return roles.includes(this.rol);
     }
 }
 

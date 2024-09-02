@@ -10,10 +10,30 @@ import { Dialogs } from '@nativescript/core'
     templateUrl: './productos.html',
 })
 export class ProductosComponent {
+    rol: string;
+    nombreCompleto: string;
+    foto: string;
+    perfil;
     productos: any[];
     public constructor(private router: Router, private apiService: ApiService) {
         // Use the component constructor to inject providers.
         this.obtenerTodos();
+        // Use the component constructor to inject providers.
+        console.log("home")
+        console.info("Averiguando si hay datos...");
+        if (localStorage.getItem('sena.token')){
+            this.perfil = JSON.parse( localStorage.getItem('sena.user'))
+            console.log("Bienvenido "+this.perfil.nombreCompleto+"!!");
+            this.rol = this.perfil.rol
+            this.nombreCompleto = this.perfil.nombreCompleto
+            this.foto = "http://zaikofactory.pythonanywhere.com"+this.perfil.foto
+        }
+        else{
+            this.rol = ""
+            this.nombreCompleto = ""
+            this.foto = ""
+            this.router.navigate(['login']);
+        }
     }
 
     public obtenerTodos(){
@@ -91,6 +111,10 @@ export class ProductosComponent {
 
     public agregarCat(){
         this.router.navigate(['productos-editar']);
+    }
+
+    public verificarPermisos(...roles: string[]): boolean {
+        return roles.includes(this.rol);
     }
 }
 

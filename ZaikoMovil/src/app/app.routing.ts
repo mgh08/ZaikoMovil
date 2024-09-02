@@ -18,6 +18,8 @@ import { ClientesEditarComponent} from "~/app/components/clientes/clientes-edita
 import { DevolucionesComponent} from "~/app/components/devoluciones/devoluciones";
 import { DevolucionesEditarComponent} from "~/app/components/devoluciones/devolucionesEditar";
 import { MateriaPrimaComponent } from "~/app/components/materiaPrima/materiaPrima";
+import { PedidosComponent} from "~/app/components/pedidos/pedidos";
+import { PedidosEditarComponent} from "~/app/components/pedidos/pedidos-editar";
 
 
 export const appRoutes: any = [
@@ -42,6 +44,8 @@ export const appRoutes: any = [
   { path: "clientes", component: ClientesComponent },
   { path: "clientes-editar", component: ClientesEditarComponent },
   { path: "materiaPrima", component: MateriaPrimaComponent },
+  { path: "pedidos", component: PedidosComponent },
+  { path: "pedidos-editar", component: PedidosEditarComponent },
 
 ];
 
@@ -66,5 +70,7 @@ export const appComponents: any = [
   DevolucionesComponent,
   DevolucionesEditarComponent,
   MateriaPrimaComponent,
+  PedidosComponent,
+  PedidosEditarComponent,
 
 ];

@@ -52,7 +52,7 @@ export class ProductosComponent {
         this.apiService.getRegisterById(register.id).subscribe((res) => {
             Dialogs.alert({
                 title: 'Detalles!',
-                message: `ID: ${res.id}\nNOMBRE: ${res.nombre}\nContacto: ${res.contacto} `,
+                message: `ID: ${res.id}\nNOMBRE:${res.nombre} \nCantidad: ${res.cantidad} \nPrecio:${res.precio} \nCategoria:${res.categorias} \nUnidad Medida:${res.unidad_medida} \nLote:${res.lote} \nFecha Vencimiento:${res.fecha_vencimiento} \nFoto:${res.foto}`,
                 okButtonText: 'OK',
                 cancelable: true,
             });

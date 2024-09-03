@@ -52,7 +52,7 @@ export class ClientesComponent {
         this.apiService.getRegisterById(register.id).subscribe((res) => {
             Dialogs.alert({
                 title: 'Detalles!',
-                message: `ID: ${res.id}\nNOMBRE: ${res.nombre}\nContacto: ${res.contacto} `,
+                message: `ID: ${res.id}\nNOMBRE:${res.nombre} \nNit:${res.nit} \nContacto:${res.contacto} \nCorreo Electronico:${res.correo_electronico} \nDireccion:${res.direccion}`,
                 okButtonText: 'OK',
                 cancelable: true,
             });

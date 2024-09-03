@@ -32,7 +32,7 @@ export class PedidosComponent {
         this.apiService.getRegisterById(register.id).subscribe((res) => {
             Dialogs.alert({
                 title: 'Detalles!',
-                message: `ID: ${res.id}\nCantidad: ${res.cantidad}\nProducto: ${res.productos} `,
+                message: `ID: ${res.id} \nCantidad:${res.cantidad} \nPrecio unitario:${res.precio_unitario} \nProducto:${res.productos} \nCliente:${res.clientes} \nFecha Pedido`,
                 okButtonText: 'OK',
                 cancelable: true,
             });

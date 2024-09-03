@@ -3,40 +3,28 @@ import { Router } from "@angular/router";
 import { ApiService } from './api.service';
 import { ItemEventData } from "@nativescript/core/ui/list-view";
 import { Dialogs } from '@nativescript/core'
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
-    selector: 'materiaPrima',
-    templateUrl: './materiaPrima.html',
+    selector: 'pedidos',
+    templateUrl: './pedidos.html',
 })
-export class MateriaPrimaComponent {
-    productos: any[];
-    mensaje: string = "";
-    materiaPrima: any[];
-    public constructor(private router: Router, private apiService: ApiService, private activatedRoute: ActivatedRoute) {
+export class PedidosComponent {
+    pedidos: any[];
+    public constructor(private router: Router, private apiService: ApiService) {
         // Use the component constructor to inject providers.
-        this.activatedRoute.queryParams
-          .subscribe((params) => {
-            if(params.id){
-                // filtro
-                console.log(`Cat para filtro: ${params.id}`)
-               // this.filtroPorCat(params.id);
-            }
-            else{
-                this.obtenerTodos();
-            }
-        });
+        this.obtenerTodos();
     }
 
     public obtenerTodos(){
         this.apiService.getRegisters().subscribe((data: any[]) => {
             //console.log(data);
-            this.materiaPrima = data;
+            this.pedidos = data;
         });
     }
 
     onItemTap(args) {
-        let register = this.materiaPrima[args.index]
+        let register = this.pedidos[args.index]
         //console.log(`Index: ${args.index}; Item: ${register.id}`);
         //console.log(`ID: ${register.id} - NOMBRE: ${register.nombre_cat} - DESCRCIPCIÓN: ${register.desc} `)
 
@@ -44,7 +32,7 @@ export class MateriaPrimaComponent {
         this.apiService.getRegisterById(register.id).subscribe((res) => {
             Dialogs.alert({
                 title: 'Detalles!',
-                message: `ID: ${res.id}\nNOMBRE: ${res.nombre}\nCATEGORÍA: ${res.categoria_name}\nMEDIDA: ${res.unidad_medida}\nLOTE: ${res.lote}\nVENCIMIENTO: ${res.fecha_vencimiento}\nCANTIDAD: ${res.cantidad}\nPRECIO: ${res.precio}\nFOTO: ${res.foto} `,
+                message: `ID: ${res.id} \nCantidad:${res.cantidad} \nPrecio unitario:${res.precio_unitario} \nProducto:${res.productos} \nCliente:${res.clientes} \nFecha Pedido`,
                 okButtonText: 'OK',
                 cancelable: true,
             });
@@ -52,7 +40,7 @@ export class MateriaPrimaComponent {
         });
     }
 
-    public eliminar(item){
+    public eliminarPed(item){
         Dialogs.confirm({
             title: 'Confirmación',
             message: 'Está seguro de eliminar este registro ?',
@@ -66,7 +54,7 @@ export class MateriaPrimaComponent {
                     this.apiService.deleteRegister(item.id).subscribe((res: string) => {
                         Dialogs.alert({
                             title: 'Respuesta:',
-                            message: "Producto eliminado correctamente!!",
+                            message: "Pedido eliminado correctamente!!",
                             okButtonText: 'OK',
                             cancelable: true,
                         });
@@ -95,13 +83,15 @@ export class MateriaPrimaComponent {
             });
 
     }
-    public editarCat(item){
-        console.log(`Editar cat: ${item.id}`)
-        this.router.navigate(['productos-editar'], { queryParams: { id: item.id } });
+
+    public editarPed(item){
+        console.log(`Editar pedido: ${item.id}`)
+        this.router.navigate(['pedidos-editar'], { queryParams: { id: item.id } });
     }
 
-    public agregarCat(){
-        this.router.navigate(['productos-editar']);
+    public agregarPed(){
+        this.router.navigate(['pedidos-editar']);
     }
 }
+
 

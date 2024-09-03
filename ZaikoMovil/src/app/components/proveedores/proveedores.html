@@ -10,30 +10,32 @@
 
 <StackLayout class="background-page">
 
-    <Label class="h1 text-center" text="Proveedores" ></Label>
+    <Label class="h1 text-center" text="Proveedores"></Label>
 
     <Button class="btn-principal" text="Leer Proveedores" (tap)="obtenerTodos()"></Button>
-    <Button class="btn-secundario" text="Crear Proveedores" (tap)="agregarCat()"></Button>
+    <Button class="btn-secundario" text="Crear Proveedores" (tap)="agregarCat()" [visibility]="verificarPermisos('ADMIN', 'GEREN') ? 'visible' : 'collapsed'"></Button>
 
     <ListView height="400" [items]="proveedores" (itemTap)="onItemTap($event)" class="list-group">
         <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
-            <GridLayout rows="*, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, * "columns="auto, *, *, *, *">
-
+            <GridLayout [columns]="verificarPermisos('ADMIN', 'GEREN') ? 'auto, *, *, *, *' : 'auto, *, *, *'" rows="auto, auto">
+                
+                <!-- Encabezados -->
                 <Label text="Id" class="tamanoLetra3" col="0"></Label>
                 <Label text="Nombre" class="tamanoLetra3" col="1"></Label>
                 <Label text="Nit" class="tamanoLetra3" col="2"></Label>
                 <Label text="Teléfono" class="tamanoLetra3" col="3"></Label>
-                <Label text="Acciones" class="tamanoLetra3" col="4"></Label>
+                <Label text="Acciones" class="tamanoLetra3" col="4" [visibility]="verificarPermisos('ADMIN', 'GEREN') ? 'visible' : 'collapsed'"></Label>
+
+                <!-- Datos -->
                 <Label [text]="item.id" col="0" row="1" class="tamanoLetra2"></Label>
                 <Label [text]="item.nombre" col="1" row="1" class="tamanoLetra2"></Label>
                 <Label [text]="item.nit" col="2" row="1" class="tamanoLetra2"></Label>
                 <Label [text]="item.telefono" col="3" row="1" class="tamanoLetra2"></Label>
 
-                <GridLayout col="4" row="1" columns="*, *" height="80%">
-                    <Label text="&#xf31c;" row="1" col="1" class="fas editar"
-                           (tap)="editarCat(item)"></Label>
-                    <Label text="&#xf1f8;" row="1" col="0" class="fas eliminar"
-                           (tap)="eliminarCat(item)"></Label>
+                <!-- Acciones -->
+                <GridLayout col="4" row="1" columns="*, *" height="80%" [visibility]="verificarPermisos('ADMIN', 'GEREN') ? 'visible' : 'collapsed'">
+                    <Label text="&#xf31c;" col="0" class="fas editar" (tap)="editarCat(item)"></Label>
+                    <Label text="&#xf1f8;" col="1" class="fas eliminar" (tap)="eliminarCat(item)"></Label>
                 </GridLayout>
 
             </GridLayout>
@@ -41,3 +43,4 @@
     </ListView>
 
 </StackLayout>
+

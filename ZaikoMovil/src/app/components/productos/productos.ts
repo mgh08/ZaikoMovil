@@ -10,10 +10,30 @@ import { Dialogs } from '@nativescript/core'
     templateUrl: './productos.html',
 })
 export class ProductosComponent {
+    rol: string;
+    nombreCompleto: string;
+    foto: string;
+    perfil;
     productos: any[];
     public constructor(private router: Router, private apiService: ApiService) {
         // Use the component constructor to inject providers.
         this.obtenerTodos();
+        // Use the component constructor to inject providers.
+        console.log("home")
+        console.info("Averiguando si hay datos...");
+        if (localStorage.getItem('sena.token')){
+            this.perfil = JSON.parse( localStorage.getItem('sena.user'))
+            console.log("Bienvenido "+this.perfil.nombreCompleto+"!!");
+            this.rol = this.perfil.rol
+            this.nombreCompleto = this.perfil.nombreCompleto
+            this.foto = "http://zaikofactory.pythonanywhere.com"+this.perfil.foto
+        }
+        else{
+            this.rol = ""
+            this.nombreCompleto = ""
+            this.foto = ""
+            this.router.navigate(['login']);
+        }
     }
 
     public obtenerTodos(){
@@ -32,7 +52,7 @@ export class ProductosComponent {
         this.apiService.getRegisterById(register.id).subscribe((res) => {
             Dialogs.alert({
                 title: 'Detalles!',
-                message: `ID: ${res.id}\nNOMBRE: ${res.nombre}\nContacto: ${res.contacto} `,
+                message: `ID: ${res.id}\nNOMBRE:${res.nombre} \nCantidad: ${res.cantidad} \nPrecio:${res.precio} \nCategoria:${res.categorias} \nUnidad Medida:${res.unidad_medida} \nLote:${res.lote} \nFecha Vencimiento:${res.fecha_vencimiento} \nFoto:${res.foto}`,
                 okButtonText: 'OK',
                 cancelable: true,
             });
@@ -91,6 +111,10 @@ export class ProductosComponent {
 
     public agregarCat(){
         this.router.navigate(['productos-editar']);
+    }
+
+    public verificarPermisos(...roles: string[]): boolean {
+        return roles.includes(this.rol);
     }
 }
 

@@ -10,14 +10,14 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './login.html',
 })
 export class LoginComponent {
-  usuario: string = "admin";
-  password: string = "12345";
+  usuario: string = "";
+  password: string = "";
 
   public constructor(private router: Router, private apiService: ApiService, private activatedRoute: ActivatedRoute) {
     // Use the component constructor to inject providers.
     console.info("Averiguando si hay datos...");
     if (localStorage.getItem('sena.token')) {
-      console.log("Bienvenido " + JSON.parse(localStorage.getItem('sena.user')).nombre + "!!");
+      console.log("Bienvenido " + JSON.parse(localStorage.getItem('sena.user')).nombreCompleto + "!!");
       this.router.navigate(['admin']);
     }
   }

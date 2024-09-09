@@ -11,24 +11,24 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getRegisters(): Observable<any[]> {
-    return this.http.get<any[]>(`${global.apiUrl}/MateriaPrima/`);
+    return this.http.get<any[]>(`${global.apiUrl}/Pedido/`);
   }
 
   getRegisterById(id: number): Observable<any> {
-    return this.http.get<any>(`${global.apiUrl}/MateriaPrima/${id}/`);
+    return this.http.get<any>(`${global.apiUrl}/Pedido/${id}/`);
   }
 
   addRegister(post: any): Observable<any> {
-    return this.http.post<any>(`${global.apiUrl}/MateriaPrima/`, post);
+    return this.http.post<any>(`${global.apiUrl}/Pedido/`, post);
   }
 
   updateRegister(id: number, post: any): Observable<any> {
     console.log(`datos: ${post.nombre_categoria} - ${post.descripcion}`)
-    return this.http.put<any>(`${global.apiUrl}/MateriaPrima/${id}/`, post);
+    return this.http.put<any>(`${global.apiUrl}/Pedido/${id}/`, post);
   }
 
   deleteRegister(id: number): Observable<any> {
-    return this.http.delete<any>(`${global.apiUrl}/MateriaPrima/${id}/`);
+    return this.http.delete<any>(`${global.apiUrl}/Pedido/${id}/`);
   }
 }
 

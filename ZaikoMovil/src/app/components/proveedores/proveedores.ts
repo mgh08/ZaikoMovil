@@ -53,7 +53,7 @@ export class ProveedoresComponent {
         this.apiService.getRegisterById(register.id).subscribe((res) => {
             Dialogs.alert({
                 title: 'Detalles!',
-                message: `ID: ${res.id}\nNOMBRE: ${res.nombre}\nContacto: ${res.telefono} `,
+                message: `ID: ${res.id}\nNOMBRE: ${res.nombre} \nNit:${res.nit} \nContacto: ${res.telefono} \nCorreo Electronico:${res.correo_electronico} `,
                 okButtonText: 'OK',
                 cancelable: true,
             });

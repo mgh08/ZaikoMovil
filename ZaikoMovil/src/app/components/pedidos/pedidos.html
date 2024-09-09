@@ -1,0 +1,43 @@
+<ActionBar class="barraNav">
+    <GridLayout columns="*, auto">
+        <StackLayout col="0" horizontalAlignment="left" verticalAlignment="center">
+            <Image src="~/app/images/logo.png" stretch="aspectFit"/>
+        </StackLayout>
+        <button col="1" pageTransition="slideRight" text="&#xf060;" class="fas icon" tap="toggleDrawer" [nsRouterLink]="['/menu']"></button>
+    </GridLayout>
+</ActionBar>
+
+
+<StackLayout class="background-page">
+
+    <Label class="h1 text-center" text="Pedidos" ></Label>
+
+    <Button class="btn-principal" text="Leer Pedidos" (tap)="obtenerTodos()"></Button>
+    <Button class="btn-secundario" text="Crear Pedidos" (tap)="agregarPed()"></Button>
+
+    <ListView height="400" [items]="pedidos" (itemTap)="onItemTap($event)" class="list-group">
+        <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+            <GridLayout rows="*, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, *, * "columns="*, *, *, *, *">
+
+                <Label text="Id" class="header-cell " col="0"></Label>
+                <Label text="Cantidad" class="header-cell " col="1"></Label>
+                <Label text="Precio unitario" class="header-cell " col="2"></Label>
+                <Label text="Fecha Pedido" class="header-cell " col="3"></Label>
+                <Label text="Acciones" class="header-cell " col="4"></Label>
+                <Label [text]="item.id" col="0" row="1" class="fas list-group-item"></Label>
+                <Label [text]="item.cantidad" col="1" row="1" class="fas list-group-item"></Label>
+                <Label [text]="item.precio_unitario" col="2" row="1" class="fas list-group-item"></Label>
+                <Label [text]="item.fecha_pedido" col="3" row="1" class="fas list-group-item"></Label>
+
+                <GridLayout col="4" row="1" columns="*, *" height="80%">
+                    <Label text="&#xf044;" row="1" col="0" class="fas editar"
+                           (tap)="editarPed(item)"></Label>
+                    <Label text="&#xf2ed;" row="1" col="1" class="fas eliminar"
+                           (tap)="eliminarPed(item)"></Label>
+                </GridLayout>
+
+            </GridLayout>
+        </ng-template>
+    </ListView>
+
+</StackLayout>

@@ -22,7 +22,11 @@ import { HttpClientModule } from '@angular/common/http';
 class AppComponentModule {}
 
 
+<<<<<<< HEAD
 global.Url = "http://10.171.80.47:8000"
+=======
+global.Url = "http://10.171.80.94:8000"
+>>>>>>> cb2868dfc206e4a07ff855c3f941cf3e3105d135
 // global.Url = "http://zaikofactory.pythonanywhere.com"
 global.apiUrl = global.Url + "/api/1.0"
 

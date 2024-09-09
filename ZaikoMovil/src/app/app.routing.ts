@@ -17,11 +17,12 @@ import { ClientesComponent} from "~/app/components/clientes/clientes";
 import { ClientesEditarComponent} from "~/app/components/clientes/clientes-editar";
 import { DevolucionesComponent} from "~/app/components/devoluciones/devoluciones";
 import { DevolucionesEditarComponent} from "~/app/components/devoluciones/devolucionesEditar";
-import { MateriaPrimaComponent } from "~/app/components/materiaPrima/materiaPrima";
+import { PedidosComponent} from "~/app/components/pedidos/pedidos";
+import { PedidosEditarComponent} from "~/app/components/pedidos/pedidos-editar";
 
 
 export const appRoutes: any = [
-  { path: '', redirectTo: 'menu', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: "home", component: HomeComponent },
   { path: "tienda", component: TiendaComponent },
   { path: 'registro', component: RegistroComponent },
@@ -30,7 +31,6 @@ export const appRoutes: any = [
   { path: "admin", component: AdminComponent },
   { path: "graficas", component: GraficasComponent },
   { path: "menu", component: MenuComponent, data: {permission: 'adm'} },
-  { path: "materiaPrima", component: MateriaPrimaComponent },
   { path: "productos", component: ProductosComponent },
   { path: "productos-editar", component: ProductosEditarComponent },
   { path: "devoluciones", component: DevolucionesComponent },
@@ -42,7 +42,9 @@ export const appRoutes: any = [
   { path: "categorias-editar", component: CategoriasEditarComponent },
   { path: "clientes", component: ClientesComponent },
   { path: "clientes-editar", component: ClientesEditarComponent },
-  { path: "materiaPrima", component: MateriaPrimaComponent },
+  { path: "pedidos", component: PedidosComponent },
+  { path: "pedidos-editar", component: PedidosEditarComponent },
+
 
 ];
 
@@ -66,6 +68,8 @@ export const appComponents: any = [
   ClientesEditarComponent,
   DevolucionesComponent,
   DevolucionesEditarComponent,
-  MateriaPrimaComponent,
+  PedidosComponent,
+  PedidosEditarComponent,
+
 
 ];
